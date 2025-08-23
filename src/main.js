@@ -9,14 +9,15 @@ const components = [
 
 async function loadComponent({ selector, importFn }) {
   try {
-    const component = document.querySelector(selector)
+    let component = document.querySelectorAll(selector)
     if (!component) return
     const module = await importFn()
     const componentName = importFn.name || 'unknown'
 
     if (typeof module.default === 'function') {
+      console.log(`Loading ${selector}`)
+      component = component.length > 1 ? component : component[0]
       module.default(component)
-      console.log(`✅ ${selector} loaded`)
     } else {
       console.warn(`No valid default function found in ${componentName}.js`)
     }
@@ -29,8 +30,8 @@ async function loadComponent({ selector, importFn }) {
   try {
     const module = await import('./components/global.js')
     if (typeof module.default === 'function') {
+      console.log(`Loading global function`)
       module.default()
-      console.log(`✅ global function loaded`)
     } else {
       console.warn(`No valid default function found in global.js`)
     }
