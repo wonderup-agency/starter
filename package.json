@@ -1,7 +1,7 @@
 {
   "name": "starter",
   "version": "1.0.0",
-  "main": "main.js",
+  "main": "dist/main.js",
   "scripts": {
     "server": "http-server -c-1 ./dist --cors",
     "dev": "rollup --config rollup.config.dev.js --watch",
@@ -20,7 +20,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/napoozinho/starter.git"
+    "url": "git+https://github.com/wonderup-agency/starter"
   },
   "description": "A minimal JavaScript starter project with Rollup, PostCSS, and optimized build tooling for modern web development.",
   "devDependencies": {
