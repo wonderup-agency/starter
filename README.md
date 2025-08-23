@@ -21,6 +21,7 @@ This repository serves as a starter template for Webflow projects at Wonderup Ag
 
 1. **Create a New Repository**
    - Use this template to create a new repository for your project on GitHub.
+   - Update the `"name"` and `"repository"` fields in `package.json` to reflect your project's name and GitHub repository URL.
 
 2. **Install Dependencies**
    - Clone the repository to your local machine.
