@@ -1,6 +1,6 @@
 {
   "name": "starter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/main.js",
   "scripts": {
     "server": "http-server -c-1 ./dist --cors",
