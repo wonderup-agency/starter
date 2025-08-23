@@ -1,0 +1,58 @@
+<!-- Webflow Snippet Usage Guide
+
+This snippet provides a setup for loading local assets (CSS/JS) during development
+while automatically falling back to production assets if the local server is unavailable.
+
+How to use:
+
+1. When starting a new Webflow project:
+   - Copy everything in this file and paste it into Webflow → Project Settings → Custom Code → Head
+
+2. Local development:
+   - Update the `href` of the <link> tag to your local CSS server URL (e.g., http://127.0.0.1:8080/styles.css).
+   - Update the `src` of the <script> tag to your local JS server URL (e.g., http://127.0.0.1:8080/main.js).
+   - Leave the `onerror` fallbacks as-is — if the local server is down, Webflow will load the production build from jsDelivr.
+
+3. Production:
+   - Replace the `href` and `src` values with the production CDN URLs from the repo (see comments above each tag).
+   - Keep the `onerror` attributes unchanged so that visitors always get a valid production fallback.
+
+4. Notes:
+   - Every time you push a commit and publish a new release/tag in the repo, you must update the version number in the production CDN URLs (e.g., change `@1.0.0` to `@1.0.1`).  
+     If the version is not updated, Webflow will keep loading the old build from jsDelivr and your changes won’t appear.  
+   - If the project doesn’t generate any CSS bundle, you don’t need to include the <link> tag in Webflow — only the <script> tag is required.  
+   - Do not delete the commented reference URLs — they serve as quick copy-paste for switching between local and production.
+
+Result:
+- During dev → loads your local server assets.
+- In production or if local server fails → falls back gracefully to the repo’s CDN build.
+-->
+
+
+<!-- CSS Bundle -->
+<!--
+http://127.0.0.1:8080/styles.css
+https://cdn.jsdelivr.net/gh/wonderup-agency/your-repo@1.1.0/dist/styles.css
+-->
+<link 
+  rel="stylesheet" 
+  href="https://cdn.jsdelivr.net/gh/wonderup-agency/your-repo@1.1.0/dist/styles.css"
+  onerror="console.warn('Local CSS main failed, loading fallback...'); 
+           var l=document.createElement('link'); 
+           l.rel='stylesheet'; 
+           l.href='https://cdn.jsdelivr.net/gh/wonderup-agency/your-repo@1.1.0/dist/styles.css'; 
+           document.head.appendChild(l);">
+
+<!-- JS Bundle -->
+<!--
+http://127.0.0.1:8080/main.js
+https://cdn.jsdelivr.net/gh/wonderup-agency/your-repo@1.1.0/dist/main.js
+-->
+<script 
+  src="https://cdn.jsdelivr.net/gh/wonderup-agency/your-repo@1.1.0/dist/main.js"
+  defer
+  onerror="console.warn('Local JS main failed, loading fallback...'); 
+           var s=document.createElement('script'); 
+           s.src='https://cdn.jsdelivr.net/gh/wonderup-agency/your-repo@1.1.0/dist/main.js'; 
+           document.head.appendChild(s);">
+</script>
