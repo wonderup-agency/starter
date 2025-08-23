@@ -7,14 +7,15 @@ This repository serves as a starter template for Webflow projects at Wonderup Ag
 - **PostCSS**: Processes CSS with modern features and optimizations.
 - **Dynamic Component Loading**: Modular JavaScript components loaded based on data attributes.
 - **Local Development Server**: Uses `http-server` for testing assets locally.
-- **Production Builds**: Minified and optimized output with comments and console.logs removed.
+- **Production Builds**: Minified and optimized output.
 - **CDN Integration**: Seamless deployment to jsDelivr for production use in Webflow.
 
 ## Prerequisites
-- [Node.js](https://nodejs.org/) (v18 or higher recommended)
-- [npm](https://www.npmjs.com/) (included with Node.js)
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/)
 - A Webflow project
 - A GitHub repository for your project
+- 🧉😎👍
 
 ## Getting Started
 
@@ -41,7 +42,7 @@ This repository serves as a starter template for Webflow projects at Wonderup Ag
 
 4. **Write Your Code**
    - Add your JavaScript components in the `components/` folder. Update `main.js` to include new components in the `components` array.
-   - Add your CSS in the `styles/` folder (processed by PostCSS).
+   - Add your CSS (if any) in the `styles/` folder (processed by PostCSS).
    - Test your changes locally using the development server.
 
 5. **Build for Production**
@@ -61,7 +62,7 @@ This repository serves as a starter template for Webflow projects at Wonderup Ag
      git add .
      git commit -m "Your commit message"
      ```
-   - Bump the version number (use `minor` or `patch` as needed):
+   - Bump the version number (use `minor` or `patch` as needed, https://semver.org/):
      ```bash
      npm version minor
      ```
@@ -71,7 +72,7 @@ This repository serves as a starter template for Webflow projects at Wonderup Ag
      ```
 
 7. **Update Webflow**
-   - In your Webflow project’s **Project Settings → Custom Code → Head**, update the `<link>` and `<script>` tags in the snippet to use the production CDN URLs from jsDelivr. Replace `*repo*` with your repository name and update the version number (e.g., `@1.0.1`) to match the latest release.
+   - In your Webflow project’s **Project Settings → Custom Code → Head**, update the `<link>` and `<script>` tags in the snippet to use the production CDN URLs from jsDelivr. Replace `your-repo` with your repository name and update the version number (e.g., `@1.0.1`) to match the latest release.
    - Example:
      ```html
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wonderup-agency/your-repo@1.0.1/dist/styles.css">
