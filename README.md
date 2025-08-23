@@ -76,8 +76,14 @@ This repository serves as a starter template for Webflow projects at Wonderup Ag
    - In your Webflow project’s **Project Settings → Custom Code → Head**, update the `<link>` and `<script>` tags in the snippet to use the production CDN URLs from jsDelivr. Replace `your-repo` with your repository name and update the version number (e.g., `@1.0.1`) to match the latest release.
    - Example:
      ```html
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wonderup-agency/your-repo@1.0.1/dist/styles.css">
-     <script src="https://cdn.jsdelivr.net/gh/wonderup-agency/your-repo@1.0.1/dist/main.js" defer></script>
+     <link
+       rel="stylesheet"
+       href="https://cdn.jsdelivr.net/gh/wonderup-agency/your-repo@1.0.1/dist/styles.css"
+     />
+     <script
+       src="https://cdn.jsdelivr.net/gh/wonderup-agency/your-repo@1.0.1/dist/main.js"
+       defer
+     ></script>
      ```
 
 ## Project Structure
