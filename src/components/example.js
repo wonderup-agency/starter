@@ -1,6 +1,5 @@
 /**
- * 
- * @param {HTMLElement} component 
+ *
+ * @param {HTMLElement} component
  */
-export default function(component) {
-}
+export default function (component) {}
