@@ -1,6 +1,10 @@
 {
   "name": "starter",
-  "version": "1.1.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wonderup-agency/starter"
+  },
+  "version": "1.0.0",
   "main": "dist/main.js",
   "scripts": {
     "server": "http-server -c-1 ./dist --cors",
@@ -18,10 +22,6 @@
   ],
   "author": "Napu 😎",
   "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wonderup-agency/starter"
-  },
   "description": "A minimal JavaScript starter project with Rollup, PostCSS, and optimized build tooling for modern web development.",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^28.0.6",
