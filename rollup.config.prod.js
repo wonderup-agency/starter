@@ -19,9 +19,11 @@ export default defineConfig({
     resolve(),
     commonjs(),
     postcss({
-      extract: 'styles.css',
       minimize: true,
       sourceMap: true,
+      inject: {
+        insertAt: 'top'
+      }
     }),
     terser({
       compress: {
