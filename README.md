@@ -78,9 +78,16 @@ This repository serves as a starter template for Webflow projects at Wonderup Ag
    - Example:
      ```html
      <script
-       src="https://cdn.jsdelivr.net/gh/wonderup-agency/your-repo@main/dist/main.js"
-       defer
-     ></script>
+      src="https://cdn.jsdelivr.net/gh/wonderup-agency/your-repo@main/dist/main.js"
+      defer
+      type="module"
+      onerror="console.warn('Local JS main failed, loading fallback...'); 
+              var s = document.createElement('script'); 
+              s.src = 'https://cdn.jsdelivr.net/gh/wonderup-agency/your-repo@main/dist/main.js'; 
+              s.type = 'module'; 
+              s.defer = true; 
+              document.head.appendChild(s);"
+    ></script>
      ```
 
 ## Project Structure
