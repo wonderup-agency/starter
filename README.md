@@ -19,12 +19,17 @@ This repository serves as a starter template for Webflow projects at Wonderup Ag
 
 ## Getting Started
 
-1. **Create a New Repository**
-   - Use this template to create a new repository for your project on GitHub.
-   - Update the `"name"` and `"repository"` fields in `package.json` to reflect your project's name and GitHub repository URL.
+1. **Create or Update Repository**
+   - If starting fresh, use this template to create a new repository for your project on GitHub.
+   - If working on an existing repository, ensure you have the latest changes by running:
+     ```bash
+     git pull origin main
+     ```
+     This fetches and merges the latest updates from the `main` branch to avoid conflicts before making changes.
+   - Update the `"name"`, `"author"`, `"description"`, and `"repository"` fields in `package.json` to reflect your project's name and GitHub repository URL.
 
 2. **Install Dependencies**
-   - Clone the repository to your local machine.
+   - Clone the repository to your local machine (if not already done).
    - Run the following command to install all required dependencies:
      ```bash
      npm install
@@ -42,8 +47,8 @@ This repository serves as a starter template for Webflow projects at Wonderup Ag
    - Copy the code from `webflow-snippet.html` and paste it into your Webflow project’s **Project Settings → Custom Code → Head**. Follow the instructions in the file to set up local asset URLs.
 
 4. **Write Your Code**
-   - Add your JavaScript components in the `components/` folder. Update `main.js` to include new components in the `components` array.
-   - Add your CSS (if any) in the `styles/` folder (processed by PostCSS).
+   - Add your JavaScript components in the `src/components/` folder. Update `src/main.js` to include new components in the `components` array.
+   - Add your CSS (if any) in the `src/styles/` folder (processed by PostCSS).
    - Test your changes locally using the development server.
 
 5. **Build for Production**
@@ -63,33 +68,25 @@ This repository serves as a starter template for Webflow projects at Wonderup Ag
      git add .
      git commit -m "Your commit message"
      ```
-   - Bump the version number (use `minor` or `patch` as needed, https://semver.org/):
+   - Push the changes to GitHub:
      ```bash
-     npm version minor
-     ```
-   - Push the changes and tags to GitHub:
-     ```bash
-     git push origin main --follow-tags
+     git push origin main
      ```
 
 7. **Update Webflow**
-   - In your Webflow project’s **Project Settings → Custom Code → Head**, update the `<link>` and `<script>` tags in the snippet to use the production CDN URLs from jsDelivr. Replace `your-repo` with your repository name and update the version number (e.g., `@1.0.1`) to match the latest release.
+   - In your Webflow project’s **Project Settings → Custom Code → Head**, update the `<script>` tag in the snippet to use the production CDN URL from jsDelivr, targeting the `main` branch. Replace `your-repo` with your repository name.
    - Example:
      ```html
-     <link
-       rel="stylesheet"
-       href="https://cdn.jsdelivr.net/gh/wonderup-agency/your-repo@1.0.1/dist/styles.css"
-     />
      <script
-       src="https://cdn.jsdelivr.net/gh/wonderup-agency/your-repo@1.0.1/dist/main.js"
+       src="https://cdn.jsdelivr.net/gh/wonderup-agency/your-repo@main/dist/main.js"
        defer
      ></script>
      ```
 
 ## Project Structure
-- `main.js`: Entry point for JavaScript, handling dynamic component loading.
-- `components/`: Directory for modular JavaScript components.
-- `styles/`: Directory for CSS files, processed by PostCSS.
+- `src/main.js`: Entry point for JavaScript, handling dynamic component loading.
+- `src/components/`: Directory for modular JavaScript components.
+- `src/styles/`: Directory for CSS files, processed by PostCSS.
 - `dist/`: Output directory for bundled and minified assets.
 - `webflow-snippet.html`: Snippet for Webflow with instructions for local and production asset loading.
 - `rollup.config.dev.js`: Rollup configuration for development.
@@ -102,7 +99,6 @@ This repository serves as a starter template for Webflow projects at Wonderup Ag
 - `npm run format`: Formats all code with Prettier.
 
 ## Notes
-- Always update the version number in the CDN URLs in Webflow after creating a new release. Failure to do so will result in Webflow loading an outdated build.
 - The `webflow-snippet.html` file includes fallback logic to ensure assets load correctly even if the local server is unavailable during development.
 - Keep the commented reference URLs in `webflow-snippet.html` for easy switching between local and production environments.
 
