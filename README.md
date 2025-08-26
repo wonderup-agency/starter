@@ -88,6 +88,7 @@ This repository serves as a starter template for Webflow projects at Wonderup Ag
               s.defer = true; 
               document.head.appendChild(s);"
     ></script>
+    
      ```
 
 ## Project Structure
