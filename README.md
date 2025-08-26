@@ -81,15 +81,10 @@ This repository serves as a starter template for Webflow projects at Wonderup Ag
       src="https://cdn.jsdelivr.net/gh/wonderup-agency/your-repo@main/dist/main.js"
       defer
       type="module"
-      onerror="console.warn('Local JS main failed, loading fallback...'); 
-              var s = document.createElement('script'); 
-              s.src = 'https://cdn.jsdelivr.net/gh/wonderup-agency/your-repo@main/dist/main.js'; 
-              s.type = 'module'; 
-              s.defer = true; 
-              document.head.appendChild(s);"
+      onerror="..."
     ></script>
-    
      ```
+    - **This is an example, refer to the `webflow-snippet.html` file for the updated script tag with the `onerror` callback.**
 
 ## Project Structure
 - `src/main.js`: Entry point for JavaScript, handling dynamic component loading.
