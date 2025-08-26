@@ -1,5 +1,7 @@
 {
   "name": "starter",
+  "author": "Napu 😎",
+  "description": "A minimal JavaScript starter project with Rollup, PostCSS, and optimized build tooling for modern web development.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wonderup-agency/starter"
@@ -20,9 +22,7 @@
     "postcss",
     "bundle"
   ],
-  "author": "Napu 😎",
   "license": "ISC",
-  "description": "A minimal JavaScript starter project with Rollup, PostCSS, and optimized build tooling for modern web development.",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^28.0.6",
     "@rollup/plugin-node-resolve": "^16.0.1",
