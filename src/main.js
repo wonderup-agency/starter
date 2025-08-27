@@ -10,7 +10,7 @@ const components = [
 async function loadComponent({ selector, importFn }) {
   try {
     let component = document.querySelectorAll(selector)
-    if (!component) return
+    if (component.length === 0) return
     const module = await importFn()
     const componentName = importFn.name || 'unknown'
 
