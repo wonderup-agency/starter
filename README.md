@@ -20,7 +20,7 @@ This repository serves as a starter template for Webflow projects at Wonderup Ag
 ## Getting Started
 
 1. **Create or Update Repository**
-   - If starting fresh, use this template to create a new repository for your project on GitHub.
+   - If starting fresh, use this template to create a new repository for your project on GitHub, and change the owner from your account to "wonderup-agency" to proceed with the next steps.
    - If working on an existing repository, ensure you have the latest changes by running:
      ```bash
      git pull origin main
