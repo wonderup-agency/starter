@@ -21,8 +21,8 @@ export default defineConfig({
       minimize: true,
       sourceMap: true,
       inject: {
-        insertAt: 'top'
-      }
+        insertAt: 'top',
+      },
     }),
   ],
 })
