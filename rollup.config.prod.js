@@ -12,7 +12,7 @@ export default defineConfig({
     format: 'es',
     entryFileNames: '[name].js',
     chunkFileNames: '[name]-[hash].js',
-    sourcemap: true,
+    sourcemap: false,
   },
   plugins: [
     del({ targets: 'dist/*' }),
@@ -20,7 +20,7 @@ export default defineConfig({
     commonjs(),
     postcss({
       minimize: true,
-      sourceMap: true,
+      sourceMap: false,
       inject: {
         insertAt: 'top',
       },
